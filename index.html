@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <meta name="theme-color" content="#101513" />
+  <title>DEADLINE — Nightfall Protocol</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main id="game-shell">
+    <canvas id="game"></canvas>
+    <div class="grain"></div>
+    <header class="topbar">
+      <div class="brand"><span class="brand-mark">D</span><div><b>DEADLINE</b><small>NIGHTFALL PROTOCOL</small></div></div>
+      <div class="objective"><span class="live-dot"></span><span id="objective">ELIMINATE THE INFECTED</span></div>
+      <div class="wave-box"><small>THREAT LEVEL</small><strong id="wave">01</strong></div>
+    </header>
+    <section class="hud">
+      <div class="vitals panel"><div class="vital-heading"><span>VITALS</span><b id="health-value">100</b></div><div class="meter"><i id="health-bar"></i></div><div class="vital-foot"><span>FIELD OPERATIVE</span><span id="status">STABLE</span></div></div>
+      <div class="ammo panel"><span class="ammo-label">SERVICE RIFLE <i>•</i> 5.56MM</span><div class="ammo-count"><b id="ammo">12</b><span>/</span><span id="reserve">084</span></div><div class="ammo-foot"><span id="weapon-state">SEMI-AUTO</span><span>R RELOAD</span></div></div>
+    </section>
+    <div class="crosshair"><i></i><i></i><i></i><i></i><b></b></div>
+    <div class="kill-feed" id="kill-feed"></div>
+    <div class="bottom-hint"><span>W A S D <b>MOVE</b></span><i></i><span>MOUSE <b>AIM</b></span><i></i><span>CLICK <b>FIRE</b></span></div>
+    <div class="mobile-controls" aria-label="Touch controls"><div class="stick-zone" id="stick-zone"><div class="stick" id="stick"></div></div><button id="fire-button">FIRE</button><button id="reload-button">↻</button></div>
+    <section class="screen" id="start-screen">
+      <div class="screen-card intro-card"><div class="eyebrow"><span></span> EMERGENCY BROADCAST // 03:17 AM</div><h1>THE NIGHT<br><em>ISN'T OVER.</em></h1><p>The evacuation convoy never made it out. Hold the perimeter, thin the infected, and stay alive until extraction can reach you.</p><div class="briefing"><div><small>MISSION</small><b>SURVIVE THE NIGHT</b></div><div><small>LOCATION</small><b>BLACKPINE OUTSKIRTS</b></div><div><small>EXTRACTION</small><b>UNKNOWN</b></div></div><button class="primary-button" id="start-button">DEPLOY <span>→</span></button><div class="controls-note">WASD TO MOVE <i>•</i> MOUSE TO AIM <i>•</i> CLICK TO FIRE <i>•</i> R TO RELOAD</div></div>
+      <div class="screen-index">FIELD REPORT 07 <span>///</span> BLACKPINE, WA</div>
+    </section>
+    <section class="screen hidden" id="end-screen"><div class="screen-card end-card"><div class="eyebrow"><span></span> OPERATION COMPLETE</div><h2 id="end-title">YOU HELD THE LINE.</h2><p id="end-copy">The perimeter is quiet. For now.</p><div class="run-stats"><div><small>INFECTED DOWN</small><b id="final-kills">0</b></div><div><small>THREAT LEVEL</small><b id="final-wave">01</b></div><div><small>TIME ALIVE</small><b id="final-time">00:00</b></div></div><button class="primary-button" id="restart-button">RUN IT BACK <span>↻</span></button></div></section>
+    <div class="toast" id="toast"></div>
+  </main>
+  <script type="module" src="game.js"></script>
+</body>
+</html>
